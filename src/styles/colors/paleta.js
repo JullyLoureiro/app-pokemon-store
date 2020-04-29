@@ -1,0 +1,5 @@
+export const water = '#00bfff'
+export const fire = '#ff6600'
+export const eletric = '#cc00ff'
+export const white = '#fff'
+export const gray = '#f4f4f4'
