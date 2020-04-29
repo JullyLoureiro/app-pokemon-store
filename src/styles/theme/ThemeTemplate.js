@@ -28,7 +28,22 @@ export const Input = styled.input`
   padding: 10px;
   font-family: ${props => props.theme.fonts[0]};
   border-radius: 5px;
-  border: 1px solid #fff;
+  border: 1px solid ${props => props.theme.colors.white};
+`;
+
+export const CardContainer = styled.div`
+  font-family: ${props => props.theme.fonts[0]};
+`;
+
+export const Card = styled.div`
+  font-family: ${props => props.theme.fonts[0]};
+  height: 200px;
+  background-color: ${props => props.theme.colors.white};
+  border: 1px solid ${props => props.theme.colors.white};
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(174, 180, 185,.3);
+  margin: 10px;
+
 `;
 
 // export const Teste = styled.div`
