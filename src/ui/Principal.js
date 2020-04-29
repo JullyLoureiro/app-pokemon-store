@@ -1,14 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import {Container, SearchBar, SearchContainer, Input, Card} from '../styles/theme/ThemeTemplate'
+import {Container, SearchBar, SearchContainer, Input, Card, CardCarrinho} from '../styles/theme/ThemeTemplate'
 import Grid from '@material-ui/core/Grid'
 import api from '../services/api'
+import CardPokemon from './CardPokemon'
 
-export default function Loja(){
+
+export default function Principal(props){
     const [search, setSearch] = useState('')
     const [pokemon, setPokemon] = useState([])
  
     useEffect(()=>{
-        api.get(`type/13/`).then(response =>{
+        api.get(`type/${props.tipo}/`).then(response =>{
             setPokemon(response.data.pokemon)
             console.log(response.data.pokemon)
         })
@@ -27,25 +29,18 @@ export default function Loja(){
                </SearchContainer>
             </SearchBar>
             
-
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={9}>
-                    {/* CARDS */}
-                    <Grid container spacing={2}>
+            {/* CONTAINER */}
+            <Grid container spacing={2} style={{marginTop: 0}}>
+                 {/* CARDS */}
+                <Grid item xs={12} md={12} style={{marginTop: 70}}>
+                    <Grid container spacing={2} >
                         {pokemon.map((element, index) => (
-                            <Grid item xs={12} sm={3} md={3} key={index}>
-                                <Card key={index}>
-                                    {element.pokemon.name}
-                                    {/* <img src={element.pokemon.url} alt={element.pokemon.name} height="42" width="42"></img> */}
-                                </Card>
+                            <Grid item xs={12} sm={3} md={3} key={index} >
+                                <CardPokemon element={element} index={index} />
                             </Grid>
                         ))}
                     </Grid>
                 </Grid>
-                <Grid item xs={12} md={3}>
-
-                </Grid>
-                
             </Grid>
         </Container>
     )
