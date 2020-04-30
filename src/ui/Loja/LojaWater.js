@@ -5,7 +5,7 @@ import Principal from '../Principal'
 export default function Loja(){
     return(
         <Theme>
-            <Principal tipo={3}/>
+            <Principal tipo={11}/>
         </Theme>
     )
 }

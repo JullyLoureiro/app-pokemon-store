@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { Card, InfoCard, ImgPokemon} from '../../styles/theme/ThemeTemplate'
+import { Card, InfoCard, ImgPokemon, Button} from '../../styles/theme/ThemeTemplate'
 import api from '../../services/api'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
-export default function CardPokemon({element, index}){
+export default function CardPokemon({element, index, preco}){
     const [image, setImage] = useState('')
 
     useEffect(()=>{
@@ -18,11 +18,22 @@ export default function CardPokemon({element, index}){
     return(
         <Card key={index}>
             <InfoCard>
-                {image === '' && <CircularProgress />}
-                {image !== '' && <ImgPokemon src={image} alt={element.pokemon.name}></ImgPokemon>}
-                {element.pokemon.name}
+                <div>
+                    {image === '' && <CircularProgress />}
+                </div>
+                <div>
+                    {image !== '' && <ImgPokemon src={image} alt={element.pokemon.name}></ImgPokemon>}  
+                </div>
+                <div>
+                    {element.pokemon.name}
+                </div>
+                <div>
+                    {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(preco)}
+                </div>
+                <div>
+                    <Button>Adicionar</Button>
+                </div>
             </InfoCard>
         </Card>
-    
     )
 }
