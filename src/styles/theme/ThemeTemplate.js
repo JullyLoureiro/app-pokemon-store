@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.gray};
   font-family: ${props => props.theme.fonts[0]};
+  overflow: hidden;
 `;
 
 export const SearchBar = styled.div`
@@ -59,6 +60,37 @@ export const Card = styled.div`
   }
 `;
 
+export const CardBag = styled.div`
+  font-family: ${props => props.theme.fonts[0]};
+  height: 60px;
+  background-color: ${props => props.theme.colors.white};
+  border: 1px solid ${props => props.theme.colors.white};
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(174, 180, 185,.3);
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover {
+    box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
+  }
+`;
+
+export const CardShop = styled.div`
+  font-family: ${props => props.theme.fonts[0]};
+  height: calc(100% - 100px) ;
+  position: fixed;
+  width: calc(25% - 25px);
+  background-color: ${props => props.theme.colors.white};
+  border: 1px solid ${props => props.theme.colors.white};
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(174, 180, 185,.3);
+  margin: 10px;
+  padding: 10;
+  &:hover {
+    box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
+  }
+`;
 
 export const InfoCard = styled.div`
   font-family: ${props => props.theme.fonts[0]};
@@ -82,15 +114,12 @@ export const ContainerShop = styled.div`
   bottom: 20px;
   box-shadow: 10px 10px 15px rgba(174, 180, 185,.3);
   right: 20px;
+  z-index: 999999;
   transition: width 2s, height 2s;
   &:hover {
     opacity: 0.9;
-    width: 240px;
-    .teste{
-      display: block;
-    }
   }
-  .teste{
+  .textTotal{
     display: none;
   }
 `;
@@ -102,6 +131,12 @@ export const ImgPokemon = styled.img`
     justify-content: center;
     align-items: center;
 `;
+
+export const BagImgPokemon = styled.img`
+    width: 50px;
+    height: 50px;
+`;
+
 
 export const Button = styled.button`
     height: 40px;

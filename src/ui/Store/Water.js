@@ -1,11 +1,11 @@
 import React from 'react'
-import Theme  from '../../styles/theme/ThemeFire'
+import Theme  from '../../styles/theme/Water'
 import Principal from '../Principal'
 
 export default function Loja(){
     return(
         <Theme>
-            <Principal tipo={10}/>
+            <Principal tipo={11}/>
         </Theme>
     )
 }
