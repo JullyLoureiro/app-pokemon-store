@@ -30,12 +30,10 @@ export default function CardPokemon(props){
                 <div>
                     {props.element.pokemon.name}
                 </div>
-                <div>
+                <div style={{marginBottom: 20}}>
                     {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.preco)}
                 </div>
-                <div>
                     <Button onClick={adicionaPokemon}>Adicionar</Button>
-                </div>
             </InfoCard>
         </Card>
     )

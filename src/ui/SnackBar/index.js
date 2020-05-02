@@ -19,7 +19,8 @@ export default function SnackBar(props) {
                     root: classes.success
                 }
             }}
-            autoHideDuration={3000} 
+            onClose={() => {return props.children()}}
+            autoHideDuration={2500} 
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
             key={`top,right`}
             open={props.open}

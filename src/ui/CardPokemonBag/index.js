@@ -27,9 +27,10 @@ export default function CardPokemon(props){
                 {image !== '' && <BagImgPokemon src={image} alt={props.item.pokemon.name}></BagImgPokemon>}  
                 {props.item.pokemon.name}
                 {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.item.preco)}
-                <ButtonBase onClick={()=>deletaPokemon(props.index)}>
+                {props.exibeDelete && <ButtonBase onClick={()=>deletaPokemon(props.index)}>
                     <DeleteOutline />
                 </ButtonBase>
+                }
             </div>
         </CardBag>
     )

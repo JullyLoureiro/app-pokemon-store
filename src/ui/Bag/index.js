@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {CardShop} from '../../styles/theme/ThemeTemplate'
-import { ButtonBase} from '@material-ui/core'
+import { ButtonBase, Button} from '@material-ui/core'
 import CloseOutlined from '@material-ui/icons/CloseOutlined'
 import CardPokemonBag from '../CardPokemonBag'
 
@@ -11,16 +11,18 @@ export default function Bag(props) {
             <ButtonBase onClick={props.closeShop}>
                 <CloseOutlined/>
             </ButtonBase>
+            Quantidade de itens : {props.shopItems.length}
             {props.shopItems.map((e, i)=>{
                 return(
-                    <CardPokemonBag index={i} item={e}>
+                    <CardPokemonBag exibeDelete index={i} item={e}>
                         {(result)=>{
-                            return props.children(result)
+                            return props.children({deletar: result})
                         }}
                     </CardPokemonBag>
                 )
             })}
             Total : {props.total}
+            <Button onClick={()=>{return props.children({finalizar: true})}}>Finalizar</Button>
         </CardShop>
    )
 }

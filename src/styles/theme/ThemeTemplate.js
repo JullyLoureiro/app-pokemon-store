@@ -96,6 +96,8 @@ export const InfoCard = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   text-align: center;
   display: flex;
+  flex: 1;
+  justify-content: center;
   flex-direction: column;
 `;
 
@@ -127,9 +129,6 @@ export const ContainerShop = styled.div`
 export const ImgPokemon = styled.img`
     width: 150px;
     height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 `;
 
 export const BagImgPokemon = styled.img`
@@ -140,11 +139,13 @@ export const BagImgPokemon = styled.img`
 
 export const Button = styled.button`
     height: 40px;
-    background-color:  ${props => props.theme.colors.colorPrimary};
-    widht: 100%;
-    border-radius: 5px;
+    background-color: #EBEBEB;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     border: none;
-    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    color:  ${props => props.theme.colors.colorPrimary};
     cursor: pointer;
     &:hover {
       opacity: 0.8;
