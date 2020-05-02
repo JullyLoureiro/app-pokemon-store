@@ -64,13 +64,13 @@ export const CardBag = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: 60px;
   background-color: ${props => props.theme.colors.white};
-  border: 1px solid ${props => props.theme.colors.white};
-  border-radius: 5px;
-  box-shadow: 0px 0px 15px rgba(174, 180, 185,.3);
-  margin: 10px;
+  border-left: 3px solid ${props => props.theme.colors.colorPrimary};
+  border-radius: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0px 0px 15px rgba(174, 180, 185,.3);
+  margin: 5px;
   &:hover {
     box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
   }
@@ -80,6 +80,9 @@ export const CardShop = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: calc(100% - 100px) ;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
   width: calc(25% - 25px);
   background-color: ${props => props.theme.colors.white};
   border: 1px solid ${props => props.theme.colors.white};
@@ -90,6 +93,15 @@ export const CardShop = styled.div`
   &:hover {
     box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
   }
+`;
+
+export const HeaderBag = styled.div`
+    display: flex;
+    background-color: ${props => props.theme.colors.colorPrimary};
+    justify-content: space-between;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 `;
 
 export const InfoCard = styled.div`
@@ -143,6 +155,7 @@ export const Button = styled.button`
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: none;
+    width: 100%;
     font-size: 18px;
     font-weight: bold;
     color:  ${props => props.theme.colors.colorPrimary};
