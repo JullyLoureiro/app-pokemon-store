@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Container, SearchBar, SearchContainer, Input, ContainerShop} from '../styles/theme/ThemeTemplate'
+import {Container, ModalBag, SearchBar, SearchContainer, Input, ContainerShop} from '../styles/theme/ThemeTemplate'
 import { Grid} from '@material-ui/core'
 import api from '../services/api'
 import CardPokemon from './CardPokemon'
@@ -114,7 +114,9 @@ export default function Principal(props){
                 }}
             />
 
-            {/* <ShopModal open={showShop} closeShop={()=>setShowShop(false)} />  */}
+            <div>
+                <ShopModal open={showShop} closeShop={()=>setShowShop(false)} /> 
+            </div>
             
             {/* ALERT DE MENSAGEM */}
             <SnackBar open={openSnack} message={messageSnack}>

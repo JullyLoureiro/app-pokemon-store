@@ -76,6 +76,14 @@ export const CardBag = styled.div`
   }
 `;
 
+export const ModalBag = styled.div`
+  @media only screen and (max-width: 600px) {
+      .MuiPaper-root.MuiPaper-elevation24.MuiPaper-rounded.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm{
+        display: none !important;
+      }
+  }
+`;
+
 export const CardShop = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: calc(100% - 100px) ;
@@ -93,6 +101,10 @@ export const CardShop = styled.div`
   &:hover {
     box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
   }
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+
 `;
 
 export const HeaderBag = styled.div`
