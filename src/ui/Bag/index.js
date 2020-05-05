@@ -1,9 +1,9 @@
 import React from 'react'
-import {CardShop, Button, HeaderBag} from '../../styles/theme/ThemeTemplate'
+import {Button, HeaderBag} from '../../styles/theme/ThemeTemplate'
+import MinimizeIcon from '@material-ui/icons/Remove'
 import { ButtonBase, Chip} from '@material-ui/core'
-import CloseOutlined from '@material-ui/icons/CloseOutlined'
 import CardPokemonBag from '../CardPokemonBag'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,13 +15,13 @@ export default function Bag(props) {
     const classes = useStyles();
     
     return(
-        <CardShop>
+        <>
             <div>
                 {/* HEADER */}
                 <HeaderBag>
                     <div style={{color: '#fff'}}>Carrinho</div>
                     <ButtonBase onClick={props.closeShop}>
-                        <CloseOutlined className={classes.root} />
+                        <MinimizeIcon className={classes.root} />
                     </ButtonBase>
                 </HeaderBag>
 
@@ -49,7 +49,7 @@ export default function Bag(props) {
             
             <div>
                 {/* TOTAL */}
-                <div style={{display: 'flex', justifyContent: 'flex-end', margin: 10,  fontSize: 17, fontWeight: 'bold'}}>
+                <div style={{display: 'flex', justifyContent: 'flex-end', margin: 15,  fontSize: 17, fontWeight: 'bold'}}>
                 Total : {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.total)}
                 </div>
 
@@ -59,6 +59,6 @@ export default function Bag(props) {
                 </div>
             </div>
         
-        </CardShop>
+        </>
    )
 }

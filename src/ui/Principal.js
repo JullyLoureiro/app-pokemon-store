@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import {Container, SearchBar, SearchContainer, Input, ContainerShop, ModalBag} from '../styles/theme/ThemeTemplate'
+import {Container, SearchBar, SearchContainer, Input, CardShop, ContainerShop, ModalBag} from '../styles/theme/ThemeTemplate'
 import { Grid} from '@material-ui/core'
 import api from '../services/api'
 import CardPokemon from './CardPokemon'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import Options  from './Options'
-import FinishedBuyModal from './Modal/FinishedBuyModal'
+import FinishedBuyModal from './Modal'
 import Bag from './Bag'
 import SnackBar from './SnackBar'
 
@@ -19,6 +19,13 @@ export default function Principal(props){
     const [openSnack, setOpenSnack] = useState(false)
     const [messageSnack, setMessageSnack] = useState('')
     const [showFinishedBuy, setShowFinishedBuy] = useState('')
+
+    useEffect(()=>{
+        if(!showFinishedBuy) {
+            setShopItems([])
+            setTotal(0)
+        }
+    }, [showFinishedBuy])
 
     useEffect(()=>{
         api.get(`type/${props.tipo}/`).then(response =>{
@@ -61,8 +68,8 @@ export default function Principal(props){
             <SearchBar isHeading={true}>
                <SearchContainer>
                     <Grid container spacing={2} style={{display: 'flex', alignItems: 'center'}}>
-                        <Grid item xs={9} sm={9} md={9}><Input type="text" value={search} onChange={(event) => filterPokemon(event)} id="search" name="search" placeholder="Digite sua pesquisa..." ></Input></Grid>
-                        <Grid item xs={3} sm={3} md={3}><Options tipo={props.tipo}/></Grid>
+                        <Grid item xs={10} sm={10} md={9}><Input type="text" value={search} onChange={(event) => filterPokemon(event)} id="search" name="search" placeholder="Digite sua pesquisa..." ></Input></Grid>
+                        <Grid item xs={2} sm={2} md={3}><Options tipo={props.tipo}/></Grid>
                     </Grid>
                </SearchContainer>
             </SearchBar>
@@ -90,11 +97,13 @@ export default function Principal(props){
                 {/* CARRINHO LATERAL */}
                 {showShop && 
                 <Grid item xs={12} md={3} style={{marginTop: 70}}>
-                    <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
-                        {(result)=>{
-                            returnResult(result)
-                        }}
-                    </Bag>
+                    <CardShop>
+                        <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
+                            {(result)=>{
+                                returnResult(result)
+                            }}
+                        </Bag>
+                    </CardShop>
                 </Grid>
                 }
                 
@@ -111,21 +120,17 @@ export default function Principal(props){
             <FinishedBuyModal 
                 itens={shopItems} 
                 open={showFinishedBuy} 
-                close={()=>{
-                    setShowFinishedBuy(false)
-                    setShopItems([])
-                    setTotal(0)
-                }}
+                close={()=>{setShowFinishedBuy(false)}}
             />
 
+            {/* MODAL DE CARRINHO MOBILE */}
            {showShop &&
                 <ModalBag>
-                    {/* <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
+                    <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
                         {(result)=>{
                             returnResult(result)
                         }}
-                    </Bag> */}
-                    <p>teste</p>
+                    </Bag>
                 </ModalBag>
             }
 

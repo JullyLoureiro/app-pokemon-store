@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-
+// CONTAINERS
 export const Container = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.gray};
@@ -9,6 +9,44 @@ export const Container = styled.div`
  
 `;
 
+export const CardContainer = styled.div`
+  font-family: ${props => props.theme.fonts[0]};
+`;
+
+export const SearchContainer = styled.div`
+  font-family: ${props => props.theme.fonts[0]};
+  overflow: hidden;
+  margin: 10px;
+  height: 60px;
+`;
+
+export const ContainerShop = styled.div`
+  cursor: pointer;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: ${props => props.theme.colors.colorPrimary};
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  box-shadow: 10px 10px 15px rgba(174, 180, 185,.3);
+  right: 20px;
+  z-index: 50;
+  transition: width 2s, height 2s;
+  &:hover {
+    opacity: 0.9;
+  }
+  .textTotal{
+    display: none;
+  }
+`;
+
+
+// SEARCH 
 export const SearchBar = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.white};
@@ -19,14 +57,6 @@ export const SearchBar = styled.div`
   z-index: 100;
 
 `;
-
-export const SearchContainer = styled.div`
-  font-family: ${props => props.theme.fonts[0]};
-  overflow: hidden;
-  margin: 10px;
-  height: 60px;
-`;
-
 
 export const Input = styled.input`
   width: 100%;
@@ -41,10 +71,7 @@ export const Input = styled.input`
   }
 `;
 
-export const CardContainer = styled.div`
-  font-family: ${props => props.theme.fonts[0]};
-`;
-
+// CARDS
 export const Card = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: 250px;
@@ -77,21 +104,6 @@ export const CardBag = styled.div`
   }
 `;
 
-export const ModalBag = styled.div`
-      width: 100%;
-      height: 90%;
-      bottom: 0;
-      position: fixed;
-      background-color:  #fff;
-      box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
-      border-radius: 5px;
-      z-index: 200;
-      display: none;
-    @media (max-width: 960px){
-        display: block;
-    }
-`;
-
 export const CardShop = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: calc(100% - 100px) ;
@@ -116,6 +128,27 @@ export const CardShop = styled.div`
 
 `;
 
+// MODAL
+export const ModalBag = styled.div`  
+    display: none;
+    @media (max-width: 960px){
+        display: flex;
+        width: 100%;
+        height: 90%;
+        flex-direction: column;
+        bottom: 0;
+        position: fixed;
+        background-color:  #fff;
+        flex: 1;
+        justify-content: space-between;
+        align-items: space-between;
+        box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
+        border-radius: 5px;
+        z-index: 200;
+    }
+`;
+
+// HEADER
 export const HeaderBag = styled.div`
     display: flex;
     background-color: ${props => props.theme.colors.colorPrimary};
@@ -125,6 +158,7 @@ export const HeaderBag = styled.div`
     border-top-right-radius: 5px;
 `;
 
+// INFO CARD
 export const InfoCard = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   text-align: center;
@@ -136,37 +170,14 @@ export const InfoCard = styled.div`
   flex-direction: column;
 `;
 
-export const ContainerShop = styled.div`
-  cursor: pointer;
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  border-radius: 50px;
-  background-color: ${props => props.theme.colors.colorPrimary};
-  color: #fff;
-  position: fixed;
-  bottom: 20px;
-  box-shadow: 10px 10px 15px rgba(174, 180, 185,.3);
-  right: 20px;
-  z-index: 50;
-  transition: width 2s, height 2s;
-  &:hover {
-    opacity: 0.9;
-  }
-  .textTotal{
-    display: none;
-  }
-`;
 
+// IMAGES
 export const BagImgPokemon = styled.img`
     width: 50px;
     height: 50px;
 `;
 
-
+// BUTTON
 export const Button = styled.button`
     height: 40px;
     background-color: #EBEBEB;
@@ -183,6 +194,8 @@ export const Button = styled.button`
     }
 `;
 
+
+// OPTIONS SELECT
 export const DivOptions = styled.div`
     position: fixed;
     z-index: 100;
