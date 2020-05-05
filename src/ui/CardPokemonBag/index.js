@@ -10,11 +10,13 @@ export default function CardPokemon(props){
     useEffect(()=>{
         const url = props.item.pokemon.url.split("v2")[1]
 
+        //Carrega imagem do pokemon
         api.get(`${url}`).then(response =>{
             setImage(response.data.sprites.front_default)
         })
     }, [props.item.pokemon])
 
+    //Retorna índice do pokemon a ser removido
     function deletaPokemon(index){
         return props.children(index)
     }

@@ -6,6 +6,7 @@ export const Container = styled.div`
   background-color: ${props => props.theme.colors.gray};
   font-family: ${props => props.theme.fonts[0]};
   overflow: hidden;
+ 
 `;
 
 export const SearchBar = styled.div`
@@ -15,7 +16,7 @@ export const SearchBar = styled.div`
   overflow: hidden;
   border-bottom: solid 1px #E2E2E2;
   position: fixed;
-  z-index: 99999;
+  z-index: 100;
 
 `;
 
@@ -77,11 +78,20 @@ export const CardBag = styled.div`
 `;
 
 export const ModalBag = styled.div`
-  @media only screen and (max-width: 600px) {
-      .MuiPaper-root.MuiPaper-elevation24.MuiPaper-rounded.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm{
-        display: none !important;
-      }
-  }
+      width: 90%;
+      height: 60%;
+      bottom: 20%;
+      left: 5%;
+      position: fixed;
+      background-color:  #fff;
+      box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
+      border-radius: 5px;
+      z-index: 200;
+      display: none;
+    @media (max-width: 960px){
+        display: block;
+        overflow-y: hidden;
+    }
 `;
 
 export const CardShop = styled.div`
@@ -119,9 +129,11 @@ export const HeaderBag = styled.div`
 export const InfoCard = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   text-align: center;
-  display: flex;
   flex: 1;
-  justify-content: center;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column;
 `;
 
@@ -140,7 +152,7 @@ export const ContainerShop = styled.div`
   bottom: 20px;
   box-shadow: 10px 10px 15px rgba(174, 180, 185,.3);
   right: 20px;
-  z-index: 999999;
+  z-index: 50;
   transition: width 2s, height 2s;
   &:hover {
     opacity: 0.9;
@@ -148,11 +160,6 @@ export const ContainerShop = styled.div`
   .textTotal{
     display: none;
   }
-`;
-
-export const ImgPokemon = styled.img`
-    width: 150px;
-    height: 150px;
 `;
 
 export const BagImgPokemon = styled.img`
@@ -179,7 +186,7 @@ export const Button = styled.button`
 
 export const DivOptions = styled.div`
     position: fixed;
-    z-index: 99999999;
+    z-index: 100;
     top: 4px;
     right: 4px;
     border-radius: 4px;
@@ -206,7 +213,7 @@ export const DivOptions = styled.div`
         background: #fff;
         transition: all .2s ease;
         box-sizing: border-box;
-        z-index:99999;
+        z-index: 100;
     }
     &:hover .content{
         opacity:1;
@@ -237,6 +244,7 @@ export const DivOptions = styled.div`
         h5{
             font-size:16px;
             margin-block-end: 0;
+            margin-top: 5px;
             font-weight: 500;
         }
         h6{

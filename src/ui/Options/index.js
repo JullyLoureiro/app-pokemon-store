@@ -21,9 +21,10 @@ export default function Options(props) {
                     {props.tipo === 10 && <h5>Loja Fogo</h5>}
                     {props.tipo === 11 && <h5>Loja Água</h5>}
                     {props.tipo === 13 && <h5>Loja Elétrica</h5>}
-                    <h6>Clique para mudar de loja</h6>
                 </div>
-                <div>
+
+                {/* ÍCONE DE CADA ELEMENTO */}
+                <div >
                     {props.tipo === 10 && <WhatshotIcon />}
                     {props.tipo === 11 && <OpacityIcon />}
                     {props.tipo === 13 && <FlashOnIcon />}

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Container, ModalBag, SearchBar, SearchContainer, Input, ContainerShop} from '../styles/theme/ThemeTemplate'
+import {Container, SearchBar, SearchContainer, Input, ContainerShop} from '../styles/theme/ThemeTemplate'
 import { Grid} from '@material-ui/core'
 import api from '../services/api'
 import CardPokemon from './CardPokemon'
@@ -29,11 +29,6 @@ export default function Principal(props){
         })
     }, [])
 
-    function returnPrice(){
-        const rand = Math.floor(Math.random() * (200 - 10)) + 10
-        return rand
-    }
-
     function filterPokemon(event){
         setSearch(event.target.value)
         const items = pokemonAll
@@ -47,6 +42,11 @@ export default function Principal(props){
             setMessageSnack('Adicione um pokemon no carrinho para finalizar a compra!')
         }
         else setShowFinishedBuy(true)
+    }
+
+    function returnResult(result){
+        if(result.finalizar) finishedBuy()
+        else setShopItems(shopItems.filter((e, i)=>(i !== result.deletar)))
     }
 
     return(
@@ -68,7 +68,7 @@ export default function Principal(props){
                     <Grid container spacing={0} >
                         {pokemon.map((element, index) => (
                             <Grid item xs={6} sm={showShop ? 4 : 3} md={showShop ? 4 : 3} key={index} >
-                                <CardPokemon element={element} index={index} preco={returnPrice()}>
+                                <CardPokemon element={element} index={index}>
                                     {(result)=>{
                                         var pokemon = {pokemon: result.element.pokemon, preco: result.preco}
                                         setShopItems([...shopItems, pokemon]);
@@ -87,8 +87,7 @@ export default function Principal(props){
                 <Grid item xs={12} md={3} style={{marginTop: 70}}>
                     <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
                         {(result)=>{
-                            if(result.finalizar) finishedBuy()
-                            else setShopItems(shopItems.filter((e, i)=>(i !== result.deletar)))
+                            returnResult(result)
                         }}
                     </Bag>
                 </Grid>
@@ -114,9 +113,13 @@ export default function Principal(props){
                 }}
             />
 
-            <div>
-                <ShopModal open={showShop} closeShop={()=>setShowShop(false)} /> 
-            </div>
+            <ShopModal total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)} open={showShop} closeShop={()=>setShowShop(false)}>
+                <Bag total={props.total} shopItems={props.shopItems} closeShop={()=>setShowShop(false)}>
+                    {(result)=>{
+                        return props.children(result)
+                    }}
+                </Bag>
+            </ShopModal> 
             
             {/* ALERT DE MENSAGEM */}
             <SnackBar open={openSnack} message={messageSnack}>
