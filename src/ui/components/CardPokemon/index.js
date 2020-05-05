@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { Card, InfoCard, Button} from '../../styles/theme/ThemeTemplate'
-import api from '../../services/api'
+import { Card, InfoCard, Button} from '../../../styles/theme/ThemeTemplate'
+import api from '../../../services/api'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 export default function CardPokemon(props){
@@ -30,10 +30,11 @@ export default function CardPokemon(props){
         <Card key={props.index}>
             <InfoCard>
                 <div>
-                    {image === '' && <CircularProgress />}
-                </div>
-                <div>
-                    {image !== '' && <img src={image ? image : `https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1`} width={150} height={image ? 150 : 70} alt={props.element.pokemon.name} /> }  
+                    {image !== '' ? 
+                        <img src={image ? image : `https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1`} width={150} height={image ? 150 : 70} alt={props.element.pokemon.name} /> 
+                        :
+                        <CircularProgress />
+                    }  
                 </div>
                 <div>
                     {props.element.pokemon.name}
@@ -41,7 +42,7 @@ export default function CardPokemon(props){
                 <div style={{marginBottom: 20}}>
                     {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(preco)}
                 </div>
-                    <Button onClick={adicionaPokemon}>Adicionar</Button>
+                <Button onClick={adicionaPokemon}>Adicionar</Button>
             </InfoCard>
         </Card>
     )

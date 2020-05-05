@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { CardBag, BagImgPokemon} from '../../styles/theme/ThemeTemplate'
-import api from '../../services/api'
+import { CardBag, BagImgPokemon} from '../../../styles/theme/ThemeTemplate'
+import api from '../../../services/api'
 import DeleteOutline from '@material-ui/icons/DeleteForeverOutlined'
 import { ButtonBase } from '@material-ui/core'
 

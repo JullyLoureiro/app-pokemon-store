@@ -1,6 +1,6 @@
 import React from 'react'
 import { List, ListItem, ListItemText } from '@material-ui/core'
-import {DivOptions} from '../../styles/theme/ThemeTemplate'
+import {DivOptions} from '../../../styles/theme/ThemeTemplate'
 import {useHistory} from 'react-router-dom'
 import WhatshotIcon from '@material-ui/icons/Whatshot'
 import OpacityIcon from '@material-ui/icons/Opacity'

@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import {Container, SearchBar, SearchContainer, Input, CardShop, ContainerShop, ModalBag} from '../styles/theme/ThemeTemplate'
+import {Container, SearchBar, SearchContainer, Input, CardShop, ContainerShop, ModalBag} from '../../../styles/theme/ThemeTemplate'
 import { Grid} from '@material-ui/core'
-import api from '../services/api'
-import CardPokemon from './CardPokemon'
+import api from '../../../services/api'
+import CardPokemon from '../CardPokemon'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
-import Options  from './Options'
-import FinishedBuyModal from './Modal'
-import Bag from './Bag'
-import SnackBar from './SnackBar'
+import Options  from '../Options'
+import FinishedBuyModal from '../Modal'
+import Bag from '../Bag'
+import SnackBar from '../SnackBar'
 
 export default function Principal(props){
     const [search, setSearch] = useState('')
@@ -68,7 +68,7 @@ export default function Principal(props){
             <SearchBar isHeading={true}>
                <SearchContainer>
                     <Grid container spacing={2} style={{display: 'flex', alignItems: 'center'}}>
-                        <Grid item xs={10} sm={10} md={9}><Input type="text" value={search} onChange={(event) => filterPokemon(event)} id="search" name="search" placeholder="Digite sua pesquisa..." ></Input></Grid>
+                        <Grid item xs={10} sm={10} md={9}><Input type="text" value={search} onChange={(event) => filterPokemon(event)} id="search" name="search" placeholder="O que está procurando?" ></Input></Grid>
                         <Grid item xs={2} sm={2} md={3}><Options tipo={props.tipo}/></Grid>
                     </Grid>
                </SearchContainer>

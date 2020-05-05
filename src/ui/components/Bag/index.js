@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, HeaderBag} from '../../styles/theme/ThemeTemplate'
+import {Button, HeaderBag} from '../../../styles/theme/ThemeTemplate'
 import MinimizeIcon from '@material-ui/icons/Remove'
 import { ButtonBase, Chip} from '@material-ui/core'
 import CardPokemonBag from '../CardPokemonBag'
@@ -25,7 +25,7 @@ export default function Bag(props) {
                     </ButtonBase>
                 </HeaderBag>
 
-                {/* QUANTITY ITEMS */}
+                {/* QTD ITEMS */}
                 <div style={{margin: 10, display: 'flex', justifyContent: 'flex-end'}}>
                     <Chip label={`${props.shopItems.length} item(s)`} />
                 </div>
@@ -34,7 +34,7 @@ export default function Bag(props) {
             </div>
           
 
-            {/* ITEMS */}
+            {/* LIST ITEMS */}
             <div style={{overflowY: 'scroll', flex: 1}}>
                 {props.shopItems.map((e, i)=>{
                     return(
