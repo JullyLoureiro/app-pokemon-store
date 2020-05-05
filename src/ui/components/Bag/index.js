@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, HeaderBag} from '../../../styles/theme/ThemeTemplate'
+import {Button, HeaderBag, Total, QtdItems, TitleBag} from '../../../styles/theme/ThemeTemplate'
 import MinimizeIcon from '@material-ui/icons/Remove'
 import { ButtonBase, Chip} from '@material-ui/core'
 import CardPokemonBag from '../CardPokemonBag'
@@ -19,18 +19,16 @@ export default function Bag(props) {
             <div>
                 {/* HEADER */}
                 <HeaderBag>
-                    <div style={{color: '#fff'}}>Carrinho</div>
+                    <TitleBag>Carrinho</TitleBag>
                     <ButtonBase onClick={props.closeShop}>
                         <MinimizeIcon className={classes.root} />
                     </ButtonBase>
                 </HeaderBag>
 
                 {/* QTD ITEMS */}
-                <div style={{margin: 10, display: 'flex', justifyContent: 'flex-end'}}>
+                <QtdItems>
                     <Chip label={`${props.shopItems.length} item(s)`} />
-                </div>
-
-               
+                </QtdItems>   
             </div>
           
 
@@ -49,9 +47,9 @@ export default function Bag(props) {
             
             <div>
                 {/* TOTAL */}
-                <div style={{display: 'flex', justifyContent: 'flex-end', margin: 15,  fontSize: 17, fontWeight: 'bold'}}>
-                Total : {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.total)}
-                </div>
+                <Total>
+                    Total : {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.total)}
+                </Total>
 
                 {/* BUTTON */}
                 <div>

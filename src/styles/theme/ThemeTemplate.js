@@ -9,6 +9,10 @@ export const Container = styled.div`
  
 `;
 
+export const HomeContainer = styled.div`
+  
+`;
+
 export const CardContainer = styled.div`
   font-family: ${props => props.theme.fonts[0]};
 `;
@@ -128,7 +132,7 @@ export const CardShop = styled.div`
 
 `;
 
-// MODAL
+//Modal de carrinho para celular
 export const ModalBag = styled.div`  
     display: none;
     @media (max-width: 960px){
@@ -168,6 +172,9 @@ export const InfoCard = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  .price{
+    margin-bottom:20px;
+  }
 `;
 
 
@@ -194,8 +201,28 @@ export const Button = styled.button`
     }
 `;
 
+//Total do carrinho
+export const Total = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px;
+    font-size: 17px;
+    font-weight: bold;   
+`;
 
-// OPTIONS SELECT
+//Título do carrinho
+export const TitleBag = styled.div`
+    color: #fff;
+`;
+
+//Quantidade de itens no carrinho
+export const QtdItems = styled.div`
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+`;
+
+//Select com opções de loka
 export const DivOptions = styled.div`
     position: fixed;
     z-index: 100;
