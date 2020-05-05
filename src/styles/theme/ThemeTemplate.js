@@ -101,6 +101,7 @@ export const CardShop = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
+  justify-content: space-between;
   width: calc(25% - 25px);
   background-color: ${props => props.theme.colors.white};
   border: 1px solid ${props => props.theme.colors.white};

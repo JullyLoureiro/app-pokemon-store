@@ -25,39 +25,42 @@ export default function Bag(props) {
 
    return(
         <CardShop>
-            {/* HEADER */}
-            <HeaderBag>
-                <div style={{color: '#fff'}}>Carrinho</div>
-                <ButtonBase onClick={props.closeShop}>
-                    <CloseOutlined className={classes.root} />
-                </ButtonBase>
-            </HeaderBag>
-
-            {/* QUANTITY ITEMS */}
-            <div style={{margin: 10, display: 'flex', justifyContent: 'flex-end'}}>
-                <Chip label={`${props.shopItems.length} item(s)`} />
-            </div>
-
-            {/* ITEMS */}
-
-            <div style={{overflow: 'auto'}}>
-                <ReactList
-                    itemRenderer={renderItem}
-                    length={props.shopItems.length}
-                    type='uniform'
-                />
-            </div>
-            
-
-            {/* TOTAL */}
-            <div style={{display: 'flex', justifyContent: 'flex-end', margin: 10,  fontSize: 17, fontWeight: 'bold'}}>
-                Total : {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.total)}
-            </div>
-
-            {/* BUTTON */}
             <div>
-                <Button onClick={()=>{return props.children({finalizar: true})}}>Finalizar</Button>
+                {/* HEADER */}
+                <HeaderBag>
+                    <div style={{color: '#fff'}}>Carrinho</div>
+                    <ButtonBase onClick={props.closeShop}>
+                        <CloseOutlined className={classes.root} />
+                    </ButtonBase>
+                </HeaderBag>
+
+                {/* QUANTITY ITEMS */}
+                <div style={{margin: 10, display: 'flex', justifyContent: 'flex-end'}}>
+                    <Chip label={`${props.shopItems.length} item(s)`} />
+                </div>
+
+                  {/* ITEMS */}
+                <div style={{overflow: 'auto'}}>
+                    <ReactList
+                        itemRenderer={renderItem}
+                        length={props.shopItems.length}
+                        type='uniform'
+                    />
+                </div>
             </div>
+          
+            <div>
+                {/* TOTAL */}
+                <div style={{display: 'flex', justifyContent: 'flex-end', margin: 10,  fontSize: 17, fontWeight: 'bold'}}>
+                Total : {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.total)}
+                </div>
+
+                {/* BUTTON */}
+                <div>
+                    <Button onClick={()=>{return props.children({finalizar: true})}}>Finalizar</Button>
+                </div>
+            </div>
+        
         </CardShop>
    )
 }
