@@ -4,6 +4,7 @@ import { ButtonBase, Chip} from '@material-ui/core'
 import CloseOutlined from '@material-ui/icons/CloseOutlined'
 import CardPokemonBag from '../CardPokemonBag'
 import { makeStyles } from '@material-ui/core/styles';
+import ReactList from 'react-list';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -13,6 +14,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Bag(props) {
     const classes = useStyles();
+
+    function renderItem(index, key) {
+        return <CardPokemonBag exibeDelete index={index} item={props.shopItems[index]}>
+            {(result)=>{
+                return props.children({deletar: result})
+            }}
+        </CardPokemonBag>
+    }
 
    return(
         <CardShop>
@@ -30,15 +39,15 @@ export default function Bag(props) {
             </div>
 
             {/* ITEMS */}
-            {props.shopItems.map((e, i)=>{
-                return(
-                    <CardPokemonBag exibeDelete index={i} item={e}>
-                        {(result)=>{
-                            return props.children({deletar: result})
-                        }}
-                    </CardPokemonBag>
-                )
-            })}
+
+            <div style={{overflow: 'auto'}}>
+                <ReactList
+                    itemRenderer={renderItem}
+                    length={props.shopItems.length}
+                    type='uniform'
+                />
+            </div>
+            
 
             {/* TOTAL */}
             <div style={{display: 'flex', justifyContent: 'flex-end', margin: 10,  fontSize: 17, fontWeight: 'bold'}}>
