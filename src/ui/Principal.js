@@ -22,12 +22,19 @@ export default function Principal(props){
     const [showFinishedBuy, setShowFinishedBuy] = useState('')
 
     useEffect(()=>{
-
         api.get(`type/${props.tipo}/`).then(response =>{
             setPokemon(response.data.pokemon)
             setPokemonAll(response.data.pokemon)
         })
     }, [])
+
+    useEffect(() => {
+        var total = 0
+        shopItems.forEach(item => {
+            total += parseFloat(item.preco)
+        })
+        setTotal(total)
+    }, [shopItems]);
 
     function filterPokemon(event){
         setSearch(event.target.value)
@@ -60,7 +67,7 @@ export default function Principal(props){
                     </Grid>
                </SearchContainer>
             </SearchBar>
-            
+
             {/* LISTA DE POKEMONS */}
             <Grid container spacing={2} style={{marginTop: 0}}>
                  {/* CARDS */}
@@ -72,7 +79,6 @@ export default function Principal(props){
                                     {(result)=>{
                                         var pokemon = {pokemon: result.element.pokemon, preco: result.preco}
                                         setShopItems([...shopItems, pokemon]);
-                                        setTotal(parseFloat(total) + parseFloat(result.preco))
                                         setOpenSnack(true)
                                         setMessageSnack(`${result.element.pokemon.name} adicionado com sucesso!`)
                                     }}
