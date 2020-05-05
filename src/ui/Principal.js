@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import {Container, SearchBar, SearchContainer, Input, ContainerShop} from '../styles/theme/ThemeTemplate'
+import {Container, SearchBar, SearchContainer, Input, ContainerShop, ModalBag} from '../styles/theme/ThemeTemplate'
 import { Grid} from '@material-ui/core'
 import api from '../services/api'
 import CardPokemon from './CardPokemon'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import Options  from './Options'
-import ShopModal from './Modal/ShopModal'
 import FinishedBuyModal from './Modal/FinishedBuyModal'
 import Bag from './Bag'
 import SnackBar from './SnackBar'
@@ -119,14 +118,17 @@ export default function Principal(props){
                 }}
             />
 
-            <ShopModal total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)} open={showShop} closeShop={()=>setShowShop(false)}>
-                <Bag total={props.total} shopItems={props.shopItems} closeShop={()=>setShowShop(false)}>
-                    {(result)=>{
-                        return props.children(result)
-                    }}
-                </Bag>
-            </ShopModal> 
-            
+           {showShop &&
+                <ModalBag>
+                    {/* <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
+                        {(result)=>{
+                            returnResult(result)
+                        }}
+                    </Bag> */}
+                    <p>teste</p>
+                </ModalBag>
+            }
+
             {/* ALERT DE MENSAGEM */}
             <SnackBar open={openSnack} message={messageSnack}>
                 {(result=>{

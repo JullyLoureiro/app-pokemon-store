@@ -78,10 +78,9 @@ export const CardBag = styled.div`
 `;
 
 export const ModalBag = styled.div`
-      width: 90%;
-      height: 60%;
-      bottom: 20%;
-      left: 5%;
+      width: 100%;
+      height: 90%;
+      bottom: 0;
       position: fixed;
       background-color:  #fff;
       box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
@@ -90,7 +89,6 @@ export const ModalBag = styled.div`
       display: none;
     @media (max-width: 960px){
         display: block;
-        overflow-y: hidden;
     }
 `;
 
