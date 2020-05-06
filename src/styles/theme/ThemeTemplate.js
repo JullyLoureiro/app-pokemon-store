@@ -175,6 +175,12 @@ export const InfoCard = styled.div`
   .price{
     margin-bottom:20px;
   }
+  .iconPhotos{
+    display: flex;
+    width: 100%;
+    margin: 5px;
+    justify-content: flex-end;
+  }
 `;
 
 

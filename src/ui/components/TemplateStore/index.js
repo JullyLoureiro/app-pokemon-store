@@ -118,7 +118,6 @@ export default function Principal(props){
 
             {/* MODAL COMPRA FINALIZADA */}
             <FinishedBuyModal 
-                itens={shopItems} 
                 open={showFinishedBuy} 
                 close={()=>{setShowFinishedBuy(false)}}
             />
