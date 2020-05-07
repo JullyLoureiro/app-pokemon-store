@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { Card, InfoCard, Button} from '../../../styles/theme/ThemeTemplate'
+import { Card, InfoCard, Button, Progress} from '../../../styles/theme/ThemeTemplate'
 import api from '../../../services/api'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
+import { makeStyles } from '@material-ui/core/styles'
 
 export default function CardPokemon(props){
     const [image, setImage] = useState('')
@@ -37,7 +38,7 @@ export default function CardPokemon(props){
                     {image !== '' ? 
                         <img src={image ? image : `https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1`} width={130} height={image ? 130 : 70} alt={props.element.pokemon.name} /> 
                         :
-                        <CircularProgress />
+                        <Progress style={{ width:130, height:130 }} ><CircularProgress className={'Progress'} /></Progress>
                     }  
                 </div>
                 <div>

@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SnackBar(props) {
-    const classes = useStyles();
+    const classes = useStyles()
     
     return (
         <div>

@@ -194,6 +194,13 @@ export const BagImgPokemon = styled.img`
     height: 50px;
 `;
 
+//PROGRESS
+export const Progress = styled.div`
+    .Progress{
+      color:  ${props => props.theme.colors.colorPrimary};
+    }
+`;
+
 // BUTTON
 export const Button = styled.button`
     height: 40px;
