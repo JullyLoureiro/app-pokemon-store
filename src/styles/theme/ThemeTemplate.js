@@ -6,8 +6,7 @@ export const Container = styled.div`
   height: 100vh;
   background-color: ${props => props.theme.colors.gray};
   font-family: ${props => props.theme.fonts[0]};
-  overflow-x: hidden;
- 
+  position: relative;
 `;
 
 export const HomeContainer = styled.div`
@@ -259,7 +258,7 @@ export const DivOptions = styled.div`
     }
 
     .content{
-        position:absolute;
+        position:relative;
         right:0;
         top:56px;
         height:0;

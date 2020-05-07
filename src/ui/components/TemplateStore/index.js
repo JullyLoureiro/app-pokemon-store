@@ -76,9 +76,9 @@ export default function Principal(props){
             </SearchBar>
 
             {/* LISTA DE POKEMONS */}
-            <Grid container spacing={2} style={{marginTop: 0}}>
+            <Grid container spacing={0}>
                  {/* CARDS */}
-                <Grid item xs={12} md={showShop ? 9 : 12} style={{marginTop: 70}}>
+                <Grid item xs={12} md={showShop ? 9 : 12} style={{marginTop: 100}}>
                     <Grid container spacing={0} >
                         {pokemon.map((element, index) => (
                             <Grid item xs={6} sm={showShop ? 4 : 3} md={showShop ? 4 : 3} key={index} >
