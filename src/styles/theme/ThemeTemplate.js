@@ -269,7 +269,7 @@ export const DivOptions = styled.div`
         background: #fff;
         transition: all .2s ease;
         box-sizing: border-box;
-        z-index: 100;
+        z-index: 300;
     }
     &:hover .content{
         opacity:1;
