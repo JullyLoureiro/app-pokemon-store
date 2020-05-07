@@ -24,6 +24,7 @@ export default function Principal(props){
         if(!showFinishedBuy) {
             setShopItems([])
             setTotal(0)
+            setShowShop(false)
         }
     }, [showFinishedBuy])
 

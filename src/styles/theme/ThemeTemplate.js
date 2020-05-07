@@ -3,6 +3,7 @@ import styled from "styled-components"
 // CONTAINERS
 export const Container = styled.div`
   width: 100%;
+  height: 100vh;
   background-color: ${props => props.theme.colors.gray};
   font-family: ${props => props.theme.fonts[0]};
   overflow: hidden;
@@ -72,6 +73,9 @@ export const Input = styled.input`
   border: 1px solid ${props => props.theme.colors.white};
   &:hover{
     background:#EBEBEB;
+  }
+  &:focus {
+    outline: none;
   }
 `;
 
@@ -231,7 +235,7 @@ export const QtdItems = styled.div`
 //Select com opções de loka
 export const DivOptions = styled.div`
     position: fixed;
-    z-index: 100;
+    z-index: 300;
     top: 4px;
     right: 4px;
     border-radius: 4px;
