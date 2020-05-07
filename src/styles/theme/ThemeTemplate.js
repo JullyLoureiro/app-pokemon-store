@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100vh;
   background-color: ${props => props.theme.colors.gray};
   font-family: ${props => props.theme.fonts[0]};
-  overflow: hidden;
+  overflow-x: hidden;
  
 `;
 
