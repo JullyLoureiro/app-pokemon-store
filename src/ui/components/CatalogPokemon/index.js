@@ -2,10 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { Card, InfoCard, Button, Progress} from '../../../styles/theme/ThemeTemplate'
 import api from '../../../services/api'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
-import { makeStyles } from '@material-ui/core/styles'
 
-export default function CardPokemon(props){
+export default function CatalogPokemon(props){
     const [image, setImage] = useState('')
     const [preco, setPreco] = useState(0)
 

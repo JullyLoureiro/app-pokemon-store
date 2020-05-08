@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {Container, SearchBar, SearchContainer, Input, CardShop, ContainerShop, ModalBag} from '../../../styles/theme/ThemeTemplate'
+import {Container, SearchBar, SearchContainer, Input, CardShop, ModalBag, ButtonShop} from '../../../styles/theme/ThemeTemplate'
 import { Grid} from '@material-ui/core'
 import api from '../../../services/api'
-import CardPokemon from '../CardPokemon'
+import CatalogPokemon from '../CatalogPokemon'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import Options  from '../Options'
 import FinishedBuyModal from '../Modal'
@@ -20,6 +20,7 @@ export default function Principal(props){
     const [messageSnack, setMessageSnack] = useState('')
     const [showFinishedBuy, setShowFinishedBuy] = useState('')
 
+    //Ao finalizar compra e fechar modal zera valores
     useEffect(()=>{
         if(!showFinishedBuy) {
             setShopItems([])
@@ -28,6 +29,7 @@ export default function Principal(props){
         }
     }, [showFinishedBuy])
 
+    //Carrega pokemons do tipo da loja
     useEffect(()=>{
         api.get(`type/${props.tipo}/`).then(response =>{
             setPokemon(response.data.pokemon)
@@ -35,6 +37,7 @@ export default function Principal(props){
         })
     }, [])
 
+    //Recalcula total sempre que itens do carrinho é alterado
     useEffect(() => {
         var total = 0
         shopItems.forEach(item => {
@@ -43,6 +46,7 @@ export default function Principal(props){
         setTotal(total)
     }, [shopItems]);
 
+    //Busca
     function filterPokemon(event){
         setSearch(event.target.value)
         const items = pokemonAll
@@ -50,6 +54,7 @@ export default function Principal(props){
         setPokemon(array)
     }
 
+    //Finaliza compra
     function finishedBuy(){
         if(shopItems.length === 0) {
             setOpenSnack(true)
@@ -58,6 +63,7 @@ export default function Principal(props){
         else setShowFinishedBuy(true)
     }
 
+    //Retorno do carrinho
     function returnResult(result){
         if(result.finalizar) finishedBuy()
         else setShopItems(shopItems.filter((e, i)=>(i !== result.deletar)))
@@ -78,18 +84,18 @@ export default function Principal(props){
             {/* LISTA DE POKEMONS */}
             <Grid container spacing={0}>
                  {/* CARDS */}
-                <Grid item xs={12} md={showShop ? 9 : 12} style={{marginTop: 100}}>
+                <Grid item xs={12} md={showShop ? 9 : 12} style={{marginTop: 90}}>
                     <Grid container spacing={0} >
                         {pokemon.map((element, index) => (
                             <Grid item xs={6} sm={showShop ? 4 : 3} md={showShop ? 4 : 3} key={index} >
-                                <CardPokemon element={element} index={index}>
+                                <CatalogPokemon element={element} index={index}>
                                     {(result)=>{
                                         var pokemon = {pokemon: result.element.pokemon, preco: result.preco}
                                         setShopItems([...shopItems, pokemon]);
                                         setOpenSnack(true)
                                         setMessageSnack(`${result.element.pokemon.name} adicionado com sucesso!`)
                                     }}
-                                </CardPokemon>
+                                </CatalogPokemon>
                             </Grid>
                         ))}
                     </Grid>
@@ -97,7 +103,7 @@ export default function Principal(props){
                
                 {/* CARRINHO LATERAL */}
                 {showShop && 
-                <Grid item xs={12} md={3} style={{marginTop: 70}}>
+                <Grid item xs={12} md={3} style={{marginTop: 90}}>
                     <CardShop>
                         <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
                             {(result)=>{
@@ -110,10 +116,10 @@ export default function Principal(props){
                 
                 {/* FLOATING BUTTON CARRINHO */}
                 {!showShop && 
-                    <ContainerShop onClick={()=>setShowShop(true)}>
+                    <ButtonShop onClick={()=>setShowShop(true)}>
                         <div><ShoppingCartIcon fontSize={"large"}/></div>
                         <div style={{fontSize: 20}}>{shopItems.length}</div>
-                    </ContainerShop>
+                    </ButtonShop>
                 }
             </Grid>
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import {eletric, white, gray} from '../colors/paleta'
+import {poison, white, gray} from '../colors/paleta'
 
 const theme = {
   colors: {
-    colorPrimary: eletric,
-    gradiente: 'linear-gradient(to bottom right, #ffcc00, #ffdb4d)', 
+    colorPrimary: poison,
+    gradiente: 'linear-gradient(to bottom right, #8600b3, #ac00e6)', 
     white: white,
     gray: gray
   },

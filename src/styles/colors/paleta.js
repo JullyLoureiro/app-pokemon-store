@@ -1,5 +1,6 @@
-export const water = '#00bfff'
+export const water = '#3366ff'
 export const fire = '#e60000'
 export const eletric = '#ffcc00'
+export const poison = '#8600b3'
 export const white = '#fff'
 export const gray = '#f5f5f5'

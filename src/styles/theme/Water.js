@@ -6,9 +6,11 @@ import {water, white, gray} from '../colors/paleta'
 const theme = {
   colors: {
     colorPrimary: water,
+    gradiente: 'linear-gradient(to bottom right, #3366ff, #6495ED)', 
     white: white,
     gray: gray
   },
+  radius: 5,
   fonts: ["Century Gothic","sans-serif", "Roboto"],
   fontSizes: {
     small: "1em",

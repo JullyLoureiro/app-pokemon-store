@@ -10,7 +10,21 @@ export const Container = styled.div`
 `;
 
 export const HomeContainer = styled.div`
-  
+    width: 100%;
+    height: 100vh;
+    flex: 1;
+    .water{
+      background-image: linear-gradient(to bottom right, #6495ED, #3366ff);
+    }
+    .fire{
+      background-image: linear-gradient(to bottom right,  #F87431, #e60000);
+    }
+    .eletric{
+      background-image: linear-gradient(to bottom right, #ffcc00, #ff9933);
+    }
+    .poison{
+      background-image: linear-gradient(to bottom right, #ac00e6, #730099)
+    }
 `;
 
 export const CardContainer = styled.div`
@@ -24,7 +38,9 @@ export const SearchContainer = styled.div`
   height: 60px;
 `;
 
-export const ContainerShop = styled.div`
+
+//Botão flutuante do carrinho
+export const ButtonShop = styled.div`
   cursor: pointer;
   display: flex; 
   justify-content: center;
@@ -33,7 +49,7 @@ export const ContainerShop = styled.div`
   height: 80px;
   text-align: center;
   border-radius: 50px;
-  background-color: ${props => props.theme.colors.colorPrimary};
+  background-image: ${props => props.theme.colors.gradiente};
   color: #fff;
   position: fixed;
   bottom: 20px;
@@ -84,7 +100,7 @@ export const Card = styled.div`
   height: 250px;
   background-color: ${props => props.theme.colors.white};
   border: 1px solid ${props => props.theme.colors.white};
-  border-radius: 5px;
+  border-radius: ${props => props.theme.radius}px;
   box-shadow: 0px 0px 15px rgba(174, 180, 185,.3);
   margin: 10px;
   display: flex;
@@ -113,7 +129,7 @@ export const CardBag = styled.div`
 
 export const CardShop = styled.div`
   font-family: ${props => props.theme.fonts[0]};
-  height: calc(100% - 100px) ;
+  height: calc(100% - 110px) ;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -155,10 +171,18 @@ export const ModalBag = styled.div`
     }
 `;
 
+//SLIDE
+export const Slide = styled.div`
+   
+    width: 100%;
+    height: 100vh;
+    flex: 1;
+`;
+
 // HEADER
 export const HeaderBag = styled.div`
     display: flex;
-    background-color: ${props => props.theme.colors.colorPrimary};
+    background-image: ${props => props.theme.colors.gradiente};
     justify-content: space-between;
     padding: 10px;
     border-top-left-radius: 5px;

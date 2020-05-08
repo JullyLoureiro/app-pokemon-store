@@ -6,6 +6,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function AlertDialogSlide(props) {
+
+  //Gera número aleatório para pedido
   function returnIdOrder(){
     const rand = Math.floor(Math.random() * (99999 - 10000)) + 10000;
     return rand

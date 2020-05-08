@@ -1,11 +1,11 @@
 import React from 'react'
-import ImgBackground from '../../../assets/background.jpg'
 import {HomeContainer} from '../../../styles/theme/ThemeTemplate'
+import Carousel from '../../components/Carousel'
 
 export default function Loja(){
     return(
         <HomeContainer>
-            {/* <img style={{backgroundSize: 'cover'}} src={ImgBackground}/> */}
+            <Carousel />
         </HomeContainer>
     )
 }
