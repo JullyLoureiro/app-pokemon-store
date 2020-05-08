@@ -11,27 +11,20 @@ export default function CatalogPokemon(props){
         const url = props.element.pokemon.url.split("v2")[1]
 
         api.get(`${url}`).then(response =>{
-
-            //Seta Imagem de cada Pokemon
             setImage(response.data.sprites.front_default)
 
-            //Gera Preço
             let price = props.element.pokemon.name.charCodeAt(0) * 6 / props.element.pokemon.name.length
             setPreco(parseFloat(price).toFixed(1))
         })
     }, [props.element])
 
-    //Retorna informações do pokemon para ser adicionado ao carrinho
-    function adicionaPokemon(){
+    function addPokemon(){
         return props.children({element: props.element, preco: preco})
     }
 
     return(
         <Card key={props.index}>
             <InfoCard>
-                {/* <div className={'iconPhotos'}>
-                    <PhotoLibraryIcon />
-                </div> */}
                 <div>
                     {image !== '' ? 
                         <img src={image ? image : `https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1`} width={130} height={image ? 130 : 70} alt={props.element.pokemon.name} /> 
@@ -45,7 +38,7 @@ export default function CatalogPokemon(props){
                 <div className='price'>
                     {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(preco)}
                 </div>
-                <Button onClick={adicionaPokemon}>Adicionar</Button>
+                <Button onClick={addPokemon}>Adicionar</Button>
             </InfoCard>
         </Card>
     )

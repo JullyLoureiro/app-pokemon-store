@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-// CONTAINERS
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -38,8 +37,6 @@ export const SearchContainer = styled.div`
   height: 60px;
 `;
 
-
-//Botão flutuante do carrinho
 export const ButtonShop = styled.div`
   cursor: pointer;
   display: flex; 
@@ -65,8 +62,6 @@ export const ButtonShop = styled.div`
   }
 `;
 
-
-// SEARCH 
 export const SearchBar = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.white};
@@ -94,7 +89,6 @@ export const Input = styled.input`
   }
 `;
 
-// CARDS
 export const Card = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: 250px;
@@ -111,7 +105,7 @@ export const Card = styled.div`
   }
 `;
 
-export const CardBag = styled.div`
+export const CardPokemonBag = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: 60px;
   background-color: ${props => props.theme.colors.white};
@@ -151,7 +145,6 @@ export const CardShop = styled.div`
 
 `;
 
-//Modal de carrinho para celular
 export const ModalBag = styled.div`  
     display: none;
     @media (max-width: 960px){
@@ -171,7 +164,6 @@ export const ModalBag = styled.div`
     }
 `;
 
-//SLIDE
 export const Slide = styled.div`
    
     width: 100%;
@@ -179,7 +171,6 @@ export const Slide = styled.div`
     flex: 1;
 `;
 
-// HEADER
 export const HeaderBag = styled.div`
     display: flex;
     background-image: ${props => props.theme.colors.gradiente};
@@ -189,7 +180,6 @@ export const HeaderBag = styled.div`
     border-top-right-radius: 5px;
 `;
 
-// INFO CARD
 export const InfoCard = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   text-align: center;
@@ -210,21 +200,17 @@ export const InfoCard = styled.div`
   }
 `;
 
-
-// IMAGES
 export const BagImgPokemon = styled.img`
     width: 50px;
     height: 50px;
 `;
 
-//PROGRESS
 export const Progress = styled.div`
     .Progress{
       color:  ${props => props.theme.colors.colorPrimary};
     }
 `;
 
-// BUTTON
 export const Button = styled.button`
     height: 40px;
     background-color: #EBEBEB;
@@ -241,7 +227,6 @@ export const Button = styled.button`
     }
 `;
 
-//Total do carrinho
 export const Total = styled.div`
     display: flex;
     justify-content: flex-end;
@@ -250,19 +235,16 @@ export const Total = styled.div`
     font-weight: bold;   
 `;
 
-//Título do carrinho
 export const TitleBag = styled.div`
     color: #fff;
 `;
 
-//Quantidade de itens no carrinho
 export const QtdItems = styled.div`
     margin: 10px;
     display: flex;
     justify-content: flex-end;
 `;
 
-//Select com opções de loka
 export const DivOptions = styled.div`
     position: fixed;
     z-index: 300;
@@ -366,7 +348,3 @@ export const DivOptions = styled.div`
 
 `;
 
-// export const Heading = styled.h1`
-//   font-size: ${({ isHeading, theme: { fontSizes } }) => isHeading ? fontSizes.large : fontSizes.small};
-//   color: ${({ theme: { colors } }) => colors.fire};
-// `;

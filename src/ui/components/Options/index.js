@@ -25,7 +25,6 @@ export default function Options(props) {
                     {props.tipo === 4 && <h5>Loja Poção</h5>}
                 </div>
 
-                {/* ÍCONE DE CADA ELEMENTO */}
                 <div >
                     {props.tipo === 10 && <WhatshotIcon />}
                     {props.tipo === 11 && <OpacityIcon />}

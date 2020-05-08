@@ -20,7 +20,6 @@ export default function Principal(props){
     const [messageSnack, setMessageSnack] = useState('')
     const [showFinishedBuy, setShowFinishedBuy] = useState('')
 
-    //Ao finalizar compra e fechar modal zera valores
     useEffect(()=>{
         if(!showFinishedBuy) {
             setShopItems([])
@@ -29,7 +28,6 @@ export default function Principal(props){
         }
     }, [showFinishedBuy])
 
-    //Carrega pokemons do tipo da loja
     useEffect(()=>{
         api.get(`type/${props.tipo}/`).then(response =>{
             setPokemon(response.data.pokemon)
@@ -37,7 +35,6 @@ export default function Principal(props){
         })
     }, [])
 
-    //Recalcula total sempre que itens do carrinho é alterado
     useEffect(() => {
         var total = 0
         shopItems.forEach(item => {
@@ -46,7 +43,6 @@ export default function Principal(props){
         setTotal(total)
     }, [shopItems]);
 
-    //Busca
     function filterPokemon(event){
         setSearch(event.target.value)
         const items = pokemonAll
@@ -54,7 +50,6 @@ export default function Principal(props){
         setPokemon(array)
     }
 
-    //Finaliza compra
     function finishedBuy(){
         if(shopItems.length === 0) {
             setOpenSnack(true)
@@ -63,7 +58,6 @@ export default function Principal(props){
         else setShowFinishedBuy(true)
     }
 
-    //Retorno do carrinho
     function returnResult(result){
         if(result.finalizar) finishedBuy()
         else setShopItems(shopItems.filter((e, i)=>(i !== result.deletar)))
@@ -71,7 +65,6 @@ export default function Principal(props){
 
     return(
         <Container>
-            {/* SEARCH BAR */}
             <SearchBar isHeading={true}>
                <SearchContainer>
                     <Grid container spacing={2} style={{display: 'flex', alignItems: 'center'}}>
@@ -81,9 +74,7 @@ export default function Principal(props){
                </SearchContainer>
             </SearchBar>
 
-            {/* LISTA DE POKEMONS */}
             <Grid container spacing={0}>
-                 {/* CARDS */}
                 <Grid item xs={12} md={showShop ? 9 : 12} style={{marginTop: 90}}>
                     <Grid container spacing={0} >
                         {pokemon.map((element, index) => (
@@ -101,7 +92,6 @@ export default function Principal(props){
                     </Grid>
                 </Grid>
                
-                {/* CARRINHO LATERAL */}
                 {showShop && 
                 <Grid item xs={12} md={3} style={{marginTop: 90}}>
                     <CardShop>
@@ -114,7 +104,6 @@ export default function Principal(props){
                 </Grid>
                 }
                 
-                {/* FLOATING BUTTON CARRINHO */}
                 {!showShop && 
                     <ButtonShop onClick={()=>setShowShop(true)}>
                         <div><ShoppingCartIcon fontSize={"large"}/></div>
@@ -123,13 +112,11 @@ export default function Principal(props){
                 }
             </Grid>
 
-            {/* MODAL COMPRA FINALIZADA */}
             <FinishedBuyModal 
                 open={showFinishedBuy} 
                 close={()=>{setShowFinishedBuy(false)}}
             />
 
-            {/* MODAL DE CARRINHO MOBILE */}
            {showShop &&
                 <ModalBag>
                     <Bag total={total} shopItems={shopItems} closeShop={()=>setShowShop(false)}>
@@ -140,7 +127,6 @@ export default function Principal(props){
                 </ModalBag>
             }
 
-            {/* ALERT DE MENSAGEM */}
             <SnackBar open={openSnack} message={messageSnack}>
                 {(result=>{
                     setOpenSnack(false)

@@ -17,7 +17,6 @@ export default function Bag(props) {
     return(
         <>
             <div>
-                {/* HEADER */}
                 <HeaderBag>
                     <TitleBag>Carrinho</TitleBag>
                     <ButtonBase onClick={props.closeShop}>
@@ -25,14 +24,11 @@ export default function Bag(props) {
                     </ButtonBase>
                 </HeaderBag>
 
-                {/* QTD ITEMS */}
                 <QtdItems>
                     <Chip label={`${props.shopItems.length} item(s)`} />
                 </QtdItems>   
             </div>
           
-
-            {/* LIST ITEMS */}
             <div style={{overflowY: 'scroll', flex: 1}}>
                 {props.shopItems.map((e, i)=>{
                     return(
@@ -46,12 +42,10 @@ export default function Bag(props) {
             </div>
             
             <div>
-                {/* TOTAL */}
                 <Total>
                     Total : {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.total)}
                 </Total>
 
-                {/* BUTTON */}
                 <div>
                     <Button onClick={()=>{return props.children({finalizar: true})}}>Finalizar</Button>
                 </div>

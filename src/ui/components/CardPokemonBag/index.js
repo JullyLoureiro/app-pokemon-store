@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { CardBag, BagImgPokemon} from '../../../styles/theme/ThemeTemplate'
+import { CardPokemonBag, BagImgPokemon} from '../../../styles/theme/ThemeTemplate'
 import api from '../../../services/api'
 import DeleteOutline from '@material-ui/icons/DeleteForeverOutlined'
 import { ButtonBase } from '@material-ui/core'
@@ -10,26 +10,25 @@ export default function CardPokemon(props){
     useEffect(()=>{
         const url = props.item.pokemon.url.split("v2")[1]
 
-        //Carrega imagem do pokemon
         api.get(`${url}`).then(response =>{
             setImage(response.data.sprites.front_default)
         })
     }, [props.item.pokemon])
 
-    //Retorna índice do pokemon a ser removido
-    function deletaPokemon(index){
+    function removePokemon(index){
         return props.children(index)
     }
 
     return(
-        <CardBag key={props.index}>
+        <CardPokemonBag key={props.index}>
             <BagImgPokemon src={image} alt={props.item.pokemon.name}></BagImgPokemon>
             <div>{props.item.pokemon.name}</div>
             <div>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(props.item.preco)}</div>
-            {props.exibeDelete && <ButtonBase onClick={()=>deletaPokemon(props.index)}>
-                <DeleteOutline />
-            </ButtonBase>
+            {props.exibeDelete && 
+                <ButtonBase onClick={()=>removePokemon(props.index)}>
+                    <DeleteOutline />
+                </ButtonBase>
             }
-        </CardBag>
+        </CardPokemonBag>
     )
 }
