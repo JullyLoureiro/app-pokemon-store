@@ -1,6 +1,6 @@
 # app-pokemon-b2w
 
-<img src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" width="300px" height="150px" />
+<img src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" width="250px" height="100px" />
 
 # A APLICAÇÃO
 Aplicação que simula uma loja virtual de Pokemons na qual é dividida em 4 tipos (Água, Fogo, Elétrica e Poção). 
