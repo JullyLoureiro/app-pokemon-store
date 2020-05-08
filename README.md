@@ -1,6 +1,6 @@
 # app-pokemon-b2w
 
-<div align="end">
+<div align="center">
 
 <img src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1" width="200px" height="70px" />
 
