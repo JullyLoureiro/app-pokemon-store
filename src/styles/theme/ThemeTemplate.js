@@ -314,7 +314,7 @@ export const DivOptions = styled.div`
     }
 
     .info{
-        width:200px;
+        width: 100px;
         text-align:right;
         margin-right: 10px;
         transform: translateY(-45%);
