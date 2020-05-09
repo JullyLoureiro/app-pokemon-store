@@ -290,6 +290,7 @@ export const DivOptions = styled.div`
     &:active .content{
       opacity:1;
       height: auto;
+      z-index: 400;
       border-radius: 4px;
       box-shadow: 0 1px 3px rgba(0,0,0,.3); 
   }
@@ -350,6 +351,7 @@ export const DivOptions = styled.div`
          &:active .content{
             opacity:1;
             height: auto;
+            z-index: 400;
             border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,.3); 
         }
