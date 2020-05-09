@@ -6,6 +6,13 @@ export const Container = styled.div`
   background-color: ${props => props.theme.colors.gray};
   font-family: ${props => props.theme.fonts[0]};
   position: relative;
+
+  .optionsStore{
+    position: fixed;
+    z-index: 400;
+    top: 0;
+    right: 0;
+  }
 `;
 
 export const HomeContainer = styled.div`
@@ -74,7 +81,7 @@ export const SearchBar = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 100%;
+  width: 80%;
   font-family: ${props => props.theme.fonts[0]};
   border-radius: 5px;
   height: 50px;
@@ -87,6 +94,11 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+
+  @media (max-width:576px){
+    width: 60%;
+  }
+}
 `;
 
 export const Card = styled.div`
@@ -337,12 +349,17 @@ export const DivOptions = styled.div`
 
     @media (max-width:576px){
         .info{
-            width: 0;
+            width: 100px;
             overflow: hidden;
+            margin-right: 10px;
+            
+        }
+        .icon{
+          margin-right: 20px;
         }
 
         .content{
-            min-width:fit-content;
+            //min-width:fit-content;
             max-width: 90vw;
             right: 5px;
             z-index: 400;
