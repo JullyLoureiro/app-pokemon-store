@@ -34,7 +34,7 @@ export const SearchContainer = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   overflow: hidden;
   margin: 10px;
-  height: 100px;
+  height: 60px;
 `;
 
 export const ButtonShop = styled.div`
@@ -335,6 +335,27 @@ export const DivOptions = styled.div`
         color:#767676;
     }
 
+    @media (max-width:576px){
+        .info{
+            width: 0;
+            overflow: hidden;
+        }
+
+        .content{
+            min-width:fit-content;
+            max-width: 90vw;
+            right: 5px;
+            z-index: 400;
+            position:relative;
+        }
+         &:active .content{
+            opacity:1;
+            height: auto;
+            z-index: 400;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.3); 
+        }
+    }
 
 `;
 
