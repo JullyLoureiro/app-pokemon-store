@@ -68,8 +68,8 @@ export default function Principal(props){
             <SearchBar isHeading={true}>
                <SearchContainer>
                     <Grid container spacing={2} style={{display: 'flex', alignItems: 'center'}}>
-                        <Grid item xs={10} sm={10} md={9}><Input type="text" value={search} onChange={(event) => filterPokemon(event)} id="search" name="search" placeholder="O que está procurando?" ></Input></Grid>
-                        <Grid item xs={2} sm={2} md={3}><Options tipo={props.tipo}/></Grid>
+                        <Grid item xs={8} sm={8} md={8}><Input type="text" value={search} onChange={(event) => filterPokemon(event)} id="search" name="search" placeholder="O que está procurando?" ></Input></Grid>
+                        <Grid item xs={4} sm={4} md={4}><Options tipo={props.tipo}/></Grid>
                     </Grid>
                </SearchContainer>
             </SearchBar>

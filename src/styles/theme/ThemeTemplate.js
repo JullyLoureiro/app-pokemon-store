@@ -347,6 +347,12 @@ export const DivOptions = styled.div`
             z-index: 400;
             position:relative;
         }
+         &:active .content{
+            opacity:1;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.3); 
+        }
     }
 
 `;
