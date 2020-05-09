@@ -9,8 +9,14 @@ const theme = {
     white: white,
     gray: gray
   },
+  colorCard: white,
   radius: 5,
-  fonts: ["Century Gothic","sans-serif", "Roboto"],
+  fonts: ["Malgun Gothic","Arial", "Roboto"],
+  borderLeft: `none`, 
+  borderRight: `none}`, 
+  borderTop: `none`, 
+  borderBottom: `none`, 
+  boxShadow: `0px 5px 5px 0px rgba(207, 0, 15,.2)`,
   fontSizes: {
     small: "1em",
     medium: "2em",

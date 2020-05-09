@@ -1,7 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import {water, white, gray} from '../colors/paleta'
-// import Quicksand from './fonts/Quicksand-Regular.ttf';
+import {water, white, gray, grayDark} from '../colors/paleta'
 
 const theme = {
   colors: {
@@ -10,8 +9,14 @@ const theme = {
     white: white,
     gray: gray
   },
+  colorCard: grayDark, 
   radius: 5,
-  fonts: ["Century Gothic","sans-serif", "Roboto"],
+  fonts: ["Malgun Gothic","Arial", "Roboto"],
+  borderLeft: `none`, 
+  borderRight: `none}`, 
+  borderTop: `none`, 
+  borderBottom: `none`, 
+  boxShadow: `0px 5px 5px 5px rgba(174, 180, 185,.2)`,
   fontSizes: {
     small: "1em",
     medium: "2em",

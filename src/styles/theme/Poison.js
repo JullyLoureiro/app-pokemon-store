@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import {poison, white, gray} from '../colors/paleta'
+import {poison, white, gray, grayDark} from '../colors/paleta'
 
 const theme = {
   colors: {
@@ -9,8 +9,14 @@ const theme = {
     white: white,
     gray: gray
   },
+  colorCard: white, 
   radius: 5,
-  fonts: ["Century Gothic","sans-serif", "Roboto"],
+  fonts: ["Malgun Gothic","Arial", "Roboto"],
+  borderLeft: `1px solid ${poison}`, 
+  borderRight: `1px solid ${poison}`, 
+  borderTop: `1px solid ${poison}`, 
+  borderBottom: `1px solid ${poison}`, 
+  boxShadow: `0px 5px 5px 5px rgba(174, 180, 185,.2)`,
   fontSizes: {
     small: "1em",
     medium: "2em",

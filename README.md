@@ -11,8 +11,23 @@
 Aplicação que simula uma loja virtual de Pokemons na qual é dividida em 4 tipos (Água, Fogo, Elétrica e Poção). 
 <br/>
 Cada loja possui o mesmo comportamento, porém com seu estilo e seu catálogo de pokemons referente ao seu tipo.
-
 Para o desenvolvimento foi utilizado ReactJS consumindo a API do Pokemon v2 -> https://pokeapi.co/
+
+Foi desenvolvido o MVP:
+<ul>
+    <li>Catálogo de produtos</li>
+    <li>Carrinho lateral</li>
+    <li>Resumo do carrinho</li>
+    <li>2 lojas com estilos e tipos diferentes de Pokémon</li>
+</ul>
+<br/>
+
+Além disso também foram desenvolvidas as seguintes funcionalidades:
+<ul>
+    <li>Barra de busca para filtrar os Pokémon</li>
+    <li>Botão de finalizar compra, reiniciando o processo de compra</li>
+    <li>Modal de compra finalizada</li>
+</ul>
 
 <br/>
 

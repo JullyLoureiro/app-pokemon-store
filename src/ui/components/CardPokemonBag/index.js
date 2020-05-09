@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { CardPokemonBag, BagImgPokemon} from '../../../styles/theme/ThemeTemplate'
 import api from '../../../services/api'
-import DeleteOutline from '@material-ui/icons/DeleteForeverOutlined'
+import DeleteOutline from '@material-ui/icons/Delete'
 import { ButtonBase } from '@material-ui/core'
 
 export default function CardPokemon(props){

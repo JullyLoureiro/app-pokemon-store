@@ -108,16 +108,21 @@ export const Card = styled.div`
 export const CardPokemonBag = styled.div`
   font-family: ${props => props.theme.fonts[0]};
   height: 60px;
-  background-color: ${props => props.theme.colors.white};
-  border-left: 3px solid ${props => props.theme.colors.colorPrimary};
-  border-radius: 2px;
+  background-color: ${props => props.theme.colorCard};
+  border-left: ${props => props.theme.borderLeft};
+  border-right: ${props => props.theme.borderRight};
+  border-top: ${props => props.theme.borderTop};
+  border-bottom: ${props => props.theme.borderBottom};
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 3px;
   box-shadow: 0px 0px 15px rgba(174, 180, 185,.3);
-  margin: 5px;
+  margin: 6px;
   &:hover {
-    box-shadow: 0px 5px 5px 5px rgba(174, 180, 185,.2);
+    box-shadow: ${props => props.theme.boxShadow};
+    
   }
 `;
 
@@ -191,12 +196,12 @@ export const InfoCard = styled.div`
   flex-direction: column;
   .price{
     margin-bottom:20px;
+    font-weight: bold;
+    color: #4c4c4c;
+    font-size: 20px;
   }
-  .iconPhotos{
-    display: flex;
-    width: 100%;
-    margin: 5px;
-    justify-content: flex-end;
+  .namePokemon{
+    color: #4c4c4c;
   }
 `;
 
@@ -282,6 +287,12 @@ export const DivOptions = styled.div`
         border-radius: 4px;
         box-shadow: 0 1px 3px rgba(0,0,0,.3); 
     }
+    &:active .content{
+      opacity:1;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.3); 
+  }
     
     > div{
         display: inline-block;
@@ -316,15 +327,7 @@ export const DivOptions = styled.div`
         }
     }
 
-    .MuiAvatar-root, .avatar, .sb-avatar{
-        background:#666666;
-        transform: translateY(-60%);
-    }
-    .sb-avatar{
-        border-radius: 50%;
-        overflow: hidden;
-        transform: translateY(-100%);
-    }
+    
     .MuiSvgIcon-root{
         transform:translateY(-23px);
         transform: translateY(-50%);

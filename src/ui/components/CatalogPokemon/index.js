@@ -32,7 +32,7 @@ export default function CatalogPokemon(props){
                         <Progress style={{ width:130, height:130 }} ><CircularProgress className={'Progress'} /></Progress>
                     }  
                 </div>
-                <div>
+                <div className='namePokemon'>
                     {props.element.pokemon.name}
                 </div>
                 <div className='price'>

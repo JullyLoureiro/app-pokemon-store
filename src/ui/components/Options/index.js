@@ -33,9 +33,7 @@ export default function Options(props) {
                 </div>
                
             </div>
-            
-            
-          
+
             <div className="content">
                 <List component='nav'>
                     <ListItemLink className="item_empresa" onClick={()=>{history.push('/water')}}>
@@ -55,3 +53,5 @@ export default function Options(props) {
         </DivOptions>
     )
 }
+
+
