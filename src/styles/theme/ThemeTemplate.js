@@ -336,7 +336,6 @@ export const DivOptions = styled.div`
 
     @media (max-width:576px){
         .info{
-            /* display:none; */
             width: 0;
             overflow: hidden;
         }
@@ -345,7 +344,8 @@ export const DivOptions = styled.div`
             min-width:fit-content;
             max-width: 90vw;
             right: 5px;
-            position:fixed;
+            z-index: 400;
+            position:relative;
         }
     }
 
