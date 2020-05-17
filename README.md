@@ -1,4 +1,4 @@
-# app-pokemon-b2w
+# app-pokemon-store
 
 <div align="center">
 
