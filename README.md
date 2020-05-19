@@ -35,8 +35,8 @@ Além disso também foram desenvolvidas as seguintes funcionalidades:
 <ul>
     <li>axios - Utilizada para a requisição da API de pokemon</li>
     <li>@material-ui/core - Utilização de Modal e Grades proporcionando melhor disposição dos componentes</li>
-    <li>@material-ui/icons - ícones da aplicação</li>
-    <li>react-bootstrap - Carrossel inicial exibindo os 4 tipos de loja</li>
+    <li>@material-ui/icons - Ícones da aplicação</li>
+    <li>react-bootstrap -   Utilizada para exibir o carrossel inicial exibindo os 4 tipos de loja</li>
     <li>react-router-dom - Esquema de navegação e rotas da aplicação</li>
     <li>styled-components - Estilização e esquema de temas para a loja</li>
 </ul>
@@ -46,6 +46,6 @@ Além disso também foram desenvolvidas as seguintes funcionalidades:
 
 # COMO RODAR
 <ul>
-    <li>Dentro da pasta app-pokemon-b2w rode o comando <b>yarn i</b> para que as dependências sejam instaladas. </li>
+    <li>Dentro da pasta app-pokemon-store rode o comando <b>yarn i</b> para que as dependências sejam instaladas. </li>
     <li>Em seguida, rode o comando <b>yarn</b> start.</li>
 </ul>
