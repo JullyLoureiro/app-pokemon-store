@@ -46,6 +46,6 @@ Além disso também foram desenvolvidas as seguintes funcionalidades:
 
 # COMO RODAR
 <ul>
-    <li>Dentro da pasta app-pokemon-store rode o comando <b>yarn i</b> para que as dependências sejam instaladas. </li>
+    <li>Dentro da pasta app-pokemon-store rode o comando <b>yarn install</b> para que as dependências sejam instaladas. </li>
     <li>Em seguida, rode o comando <b>yarn</b> start.</li>
 </ul>
